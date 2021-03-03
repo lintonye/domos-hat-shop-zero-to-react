@@ -24,7 +24,7 @@ function SearchBar() {
   return (
     <form
       className="space-x-0.5 flex"
-      onSubmit={function (e) {
+      onSubmit={function handleSubmit(e) {
         e.preventDefault();
         alert("Hang on, I'll search it for you!");
       }}
@@ -82,7 +82,7 @@ const hats = {
   "Harry Potter": imgHarry,
   Elegant: imgElegant,
   Chef: imgChef,
-  Ball: imgBall
+  Ball: imgBall,
 };
 
 function Hat(props) {
