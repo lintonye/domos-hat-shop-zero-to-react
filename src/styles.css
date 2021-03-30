@@ -9,7 +9,8 @@ body {
 /* 
 Set the height of React root to 100% too. 
 */
-#root .root {
+#root,
+.root {
   height: 100%;
 }
 
@@ -78,6 +79,7 @@ Set the height of React root to 100% too.
   gap: 24px;
   align-items: center;
   padding: 12px;
+  margin: 0;
   font-size: 0.9rem;
   background-color: #222;
   color: #fff;
