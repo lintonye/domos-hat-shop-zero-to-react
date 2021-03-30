@@ -118,11 +118,7 @@ function Main() {
   const hatNames = Object.keys(hats);
   const [activeHat, setActiveHat] = useState(hatNames[0]);
   return (
-    <main
-      className="p-3 flex justify-around items-start"
-      style={{ minHeight: "92vh" }}
-      id="Main"
-    >
+    <main className="p-3 flex justify-around items-start" id="Main">
       <DomoWithHat hat={activeHat} />
       <div className="flex flex-col justify-center space-y-6 items-start">
         <h2 className="text-2xl">{activeHat}</h2>
@@ -158,7 +154,7 @@ function Main() {
 function Footer() {
   return (
     <footer
-      className="p-2 text-xs flex justify-around items-center bg-gray-900 text-white"
+      className="mt-auto p-2 text-xs flex justify-around items-center bg-gray-900 text-white"
       id="Footer"
     >
       <div>© 2021 Domo's Hat Shop</div>
@@ -168,7 +164,7 @@ function Footer() {
 
 function DomoHatShop() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <Header />
       <Main />
       <Footer />
