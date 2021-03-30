@@ -2,7 +2,7 @@
 import React from "react";
 
 // Styles
-import "./tailwind.output.css";
+import "./styles.css";
 
 import imgThinker from "./thinker.png";
 
@@ -39,12 +39,9 @@ function SearchBar() {
 
 function ShoppingCart(props) {
   return (
-    <div className="relative m-1">
+    <div className="cart">
       <FiShoppingCart size={20} />
-      <div
-        className="absolute -right-2 -top-2 rounded-full w-4 h-4 flex justify-center items-center bg-pink-600"
-        style={{ fontSize: "0.5rem", right: -8, top: -8 }}
-      >
+      <div className="number">
         <div className="absolute">{props.count}</div>
       </div>
     </div>
@@ -53,14 +50,14 @@ function ShoppingCart(props) {
 
 function Header() {
   return (
-    <header id="Header">
-      <ul className="flex space-x-6 items-center p-3 text-sm bg-gray-900 text-white">
+    <header className="header">
+      <ul>
         <li>Home</li>
         <li>
           <SearchBar />
         </li>
         <li>Account</li>
-        <li className="flex-1 flex justify-end">
+        <li className="cart">
           <ShoppingCart count={2} />
         </li>
       </ul>
@@ -103,13 +100,9 @@ function Hat(props) {
 
 function DomoWithHat(props) {
   return (
-    <div className="relative flex-shrink-0" id="DomoWithHat">
+    <div className="domo-with-hat">
       <Domo />
-      <Hat
-        type={props.hat}
-        className="absolute left-12 -top-1"
-        style={{ left: 8, top: -10, transform: "translateX(40px)" }}
-      />
+      <Hat type={props.hat} className="hat" />
     </div>
   );
 }
@@ -118,19 +111,17 @@ function Main() {
   const hatNames = Object.keys(hats);
   const [activeHat, setActiveHat] = useState(hatNames[0]);
   return (
-    <main className="p-3 flex justify-around items-start" id="Main">
+    <main className="main">
       <DomoWithHat hat={activeHat} />
-      <div className="flex flex-col justify-center space-y-6 items-start">
-        <h2 className="text-2xl">{activeHat}</h2>
+      <div className="container">
+        <h2>{activeHat}</h2>
         <div>$50</div>
-        <div className="grid gap-1 grid-cols-5">
+        <div className="grid">
           {hatNames.map(function (hat) {
             return (
               <div
                 key={hat}
-                className={`border border-indigo-200 rounded-sm flex justify-center items-center cursor-pointer hover:border-purple-500 ${
-                  hat === activeHat ? "border-2 border-purple-700" : ""
-                }`}
+                className="hat"
                 onClick={function handleClick() {
                   setActiveHat(hat);
                 }}
@@ -140,9 +131,7 @@ function Main() {
             );
           })}
         </div>
-        <p className="text-sm">
-          A covering for the head usually having a shaped crown and brim.
-        </p>
+        <p>A covering for the head usually having a shaped crown and brim.</p>
         <button className="rounded-sm bg-pink-600 text-white text-sm py-1 px-2">
           Add To Cart
         </button>
@@ -153,10 +142,7 @@ function Main() {
 
 function Footer() {
   return (
-    <footer
-      className="mt-auto p-2 text-xs flex justify-around items-center bg-gray-900 text-white"
-      id="Footer"
-    >
+    <footer className="footer">
       <div>© 2021 Domo's Hat Shop</div>
     </footer>
   );
@@ -164,7 +150,7 @@ function Footer() {
 
 function DomoHatShop() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="root">
       <Header />
       <Main />
       <Footer />

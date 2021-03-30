@@ -1,0 +1,110 @@
+html,
+body {
+  height: 100%;
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+/* 
+Set the height of React root to 100% too. 
+*/
+#root .root {
+  height: 100%;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  margin-top: auto;
+  padding: 12px;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #222;
+  color: #fff;
+}
+
+.main {
+  padding: 12px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.main > .container > * {
+  margin-top: 16px;
+}
+
+.main .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.main .grid {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(5, auto);
+}
+
+.main .grid .hat {
+  border: 1px solid;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.domo-with-hat {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.domo-with-hat .hat {
+  position: absolute;
+  left: 48px;
+  top: -10px;
+}
+
+.header ul {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  padding: 12px;
+  font-size: 0.9rem;
+  background-color: #222;
+  color: #fff;
+  list-style: none;
+}
+
+.header li.cart {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart {
+  position: relative;
+  margin: 4px;
+}
+
+.cart .number {
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.5rem;
+  background-color: hsl(329deg 64% 54%);
+}
