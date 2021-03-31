@@ -158,8 +158,6 @@ function DomoHatShop() {
   );
 }
 
-function App() {
+export default function App() {
   return <DomoHatShop />;
 }
-
-export default App;
