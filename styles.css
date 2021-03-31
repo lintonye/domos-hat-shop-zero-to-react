@@ -1,0 +1,55 @@
+html,
+body {
+  height: 100%;
+  font-size: 18px;
+}
+
+.content {
+  height: 100%;
+  margin: auto;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.greet-button {
+  cursor: pointer;
+  color: white;
+  background: hsl(145deg 51% 43%);
+  padding: 8px 16px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+}
+
+.greet-button:hover {
+  background: hsl(145deg 51% 53%);
+}
+
+.conversation {
+  border: 1px solid #6ecfcf;
+  min-width: 80%;
+  border-radius: 4px;
+  padding: 16px;
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.you-chat::before {
+  content: "You: ";
+  font-weight: bold;
+}
+
+.domo-chat {
+  color: #0c7020;
+}
+
+.domo-chat::before {
+  content: "Domo: ";
+  font-weight: bold;
+}
